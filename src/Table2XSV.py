@@ -23,18 +23,18 @@ class Table2XSV(object):
         return "Table2XSV()"
 
     def csv2xsv(self, **kwargs):
-        if kwargs["path"].endswith(".csv"):
+        if kwargs["path"].endswith(".csv") or kwargs["path"].endswith(".tsv") or kwargs["path"].endswith(".psv"):
             _df = pd.read_csv(kwargs["path"])
             _df.to_csv(self.__outfile, index=self.__index, sep=self.__sep, encoding=self.__encoding)
         else:
-            print("Invalid file, can only accept files ending with .csv")
+            print("Invalid file, can only accept files ending with .csv or .tsv or .psv")
 
     def excel2xsv(self, **kwargs):
-        if kwargs["path"].endswith(".xlsx"):
+        if kwargs["path"].endswith(".xlsx") or kwargs["path"].endswith(".xls"):
             _df = pd.read_excel(kwargs["path"], sheet_name=kwargs["sheet"])
             _df.to_csv(self.__outfile, index=self.__index, sep=self.__sep, encoding=self.__encoding)
         else:
-            print("Invalid file, can only accept files ending with .xlsx")
+            print("Invalid file, can only accept files ending with .xlsx or .xls")
 
     def sqlite2xsv(self, **kwargs):
         if kwargs["path"].endswith(".db"):
@@ -56,43 +56,29 @@ class Table2XSV(object):
 if __name__ == "__main__":
     try:
         parser = argparse.ArgumentParser()
-        parser.add_argument("params", nargs="+", help="table type to convert to XSV and respective config")
+        parser.add_argument("params", nargs="+", help="table type data to XSV with respective config")
         parser.add_argument("-o", "--outfile", default="output {}.csv".format(datetime.now()),
-                            help="provide name for the output file with extension as .csv")
-        parser.add_argument("-e", "--encoding", default="utf-8", help="provide an encoding enclosed in quotes")
+                            help="provide name for the output file with extension")
         parser.add_argument("-s", "--sep", default=",", help="provide a separator enclosed in quotes")
+        parser.add_argument("-e", "--encoding", default="utf-8", help="provide an encoding enclosed in quotes")
         args = parser.parse_args()
 
         t2xsv = Table2XSV(args.outfile, args.sep, args.encoding)
 
         if len(args.params) == 1:
-            print("Please refer command line args help by using -h or --help or go through the manual")
+            print("Please refer command line args help by using --help or go through the manual")
 
-        else_print = "Incorrect Number or Order of Arguments"
-
-        if args.params[0].lower() == "csv":
-            if len(args.params) == 2:
-                t2xsv.csv2xsv(path=args.params[1])
-            else:
-                print(else_print)
-        elif args.params[0].lower() == "excel":
-            if len(args.params) == 3:
-                t2xsv.excel2xsv(path=args.params[1], sheet=args.params[2])
-            else:
-                print(else_print)
-        elif args.params[0].lower() == "sqlite":
-            if len(args.params) == 3:
-                t2xsv.sqlite2xsv(path=args.params[1], query=args.params[2])
-            else:
-                print(else_print)
-        elif args.params[0].lower() == "mysql":
-            if len(args.params) == 7:
-                t2xsv.mysql2xsv(host=args.params[1], port=args.params[2], user=args.params[3], password=args.params[4],
-                                db=args.params[5], query=args.params[6])
-            else:
-                print(else_print)
+        if args.params[0].lower() == "csv" and len(args.params) == 2:
+            t2xsv.csv2xsv(path=args.params[1])
+        elif args.params[0].lower() == "excel" and len(args.params) == 3:
+            t2xsv.excel2xsv(path=args.params[1], sheet=args.params[2])
+        elif args.params[0].lower() == "sqlite" and len(args.params) == 3:
+            t2xsv.sqlite2xsv(path=args.params[1], query=args.params[2])
+        elif args.params[0].lower() == "mysql" and len(args.params) == 7:
+            t2xsv.mysql2xsv(host=args.params[1], port=args.params[2], user=args.params[3], password=args.params[4],
+                            db=args.params[5], query=args.params[6])
         else:
-            print("Undefined input source")
+            print("Either undefined input source, or incorrect number / order of arguments")
 
     except Exception as e:
         print(e)
