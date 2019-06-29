@@ -22,7 +22,7 @@ pyinstaller --onefile src/Table2XSV.py
 ./Table2XSV sqlite file.db "Query"
 
 ### MySQL
-./Table2XSV mysql host port user password db "query"
+./Table2XSV mysql host port user password db "Query"
 
 ## Optional Arguments
 Specify Output File Name: --outfile or -o
