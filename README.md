@@ -12,14 +12,14 @@ Convert Tabular Data to XSV
 ## Complie
 pyinstaller --onefile src/Table2XSV.py
 
-# CSV
+### CSV
 ./Table2XSV csv file.csv
 
-# Excel
+### Excel
 ./Table2XSV excel file.xlsx SheetName
 
-# SQLite
+### SQLite
 ./Table2XSV sqlite file.db "Query"
 
-# MySQL
-./Table2XSV mysql host port user password db "query" OutputFileName
+### MySQL
+./Table2XSV mysql host port user password db "query"
