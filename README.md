@@ -23,3 +23,8 @@ pyinstaller --onefile src/Table2XSV.py
 
 ### MySQL
 ./Table2XSV mysql host port user password db "query"
+
+## Optional Arguments
+Specify Output File Name: --outfile or -o
+Specify Seperator: --sep or -s
+Specify Encoding: --encoding or -e
