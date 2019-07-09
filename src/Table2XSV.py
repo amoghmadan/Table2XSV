@@ -3,6 +3,7 @@ import argparse
 from datetime import datetime
 import sys
 import MySQLdb
+import neo4j
 import pandas as pd
 import sqlite3
 
@@ -20,7 +21,7 @@ class Table2XSV(object):
         return "Class to convert data from Excel, CSV, MySQL, SQLite to XSV."
 
     def __repr__(self):
-        return "Table2XSV()"
+        return "Table2XSV(outfile, sep, encoding)"
 
     def csv2xsv(self, **kwargs):
         if kwargs["path"].endswith(".csv") or kwargs["path"].endswith(".tsv") or kwargs["path"].endswith(".psv"):
@@ -36,6 +37,21 @@ class Table2XSV(object):
         else:
             print("Invalid file, can only accept files ending with .xlsx or .xls")
 
+    def mysql2xsv(self, **kwargs):
+        _connection = MySQLdb.connect(host=kwargs["host"], port=int(kwargs["port"]), user=kwargs["user"],
+                                      passwd=kwargs["password"], db=kwargs["db"])
+        _df = pd.read_sql(kwargs["query"], con=_connection)
+        _connection.close()
+        _df.to_csv(self.__outfile, index=self.__index, sep=self.__sep, encoding=self.__encoding)
+
+    def neo4j2xsv(self, **kwargs):
+        _driver = neo4j.GraphDatabase.driver("bolt://{}:{}".format(kwargs["host"], kwargs["port"]),
+                                             auth=(kwargs["user"], kwargs["password"]))
+        with _driver.session() as _session:
+            _result = _session.run(kwargs["query"])
+        _df = pd.DataFrame([_r.values() for _r in _result], columns=_result.keys())
+        _df.to_csv(self.__outfile, index=self.__index, sep=self.__sep, encoding=self.__encoding)
+
     def sqlite2xsv(self, **kwargs):
         if kwargs["path"].endswith(".db"):
             _connection = sqlite3.connect(kwargs["path"])
@@ -44,13 +60,6 @@ class Table2XSV(object):
             _df.to_csv(self.__outfile, index=self.__index, sep=self.__sep, encoding=self.__encoding)
         else:
             print("Invalid file, can only accept files ending with .db")
-
-    def mysql2xsv(self, **kwargs):
-        _connection = MySQLdb.connect(host=kwargs["host"], port=int(kwargs["port"]), user=kwargs["user"],
-                                      passwd=kwargs["password"], db=kwargs["db"])
-        _df = pd.read_sql(kwargs["query"], con=_connection)
-        _connection.close()
-        _df.to_csv(self.__outfile, index=self.__index, sep=self.__sep, encoding=self.__encoding)
 
 
 if __name__ == "__main__":
@@ -72,11 +81,14 @@ if __name__ == "__main__":
             t2xsv.csv2xsv(path=args.params[1])
         elif args.params[0].lower() == "excel" and len(args.params) == 3:
             t2xsv.excel2xsv(path=args.params[1], sheet=args.params[2])
-        elif args.params[0].lower() == "sqlite" and len(args.params) == 3:
-            t2xsv.sqlite2xsv(path=args.params[1], query=args.params[2])
         elif args.params[0].lower() == "mysql" and len(args.params) == 7:
             t2xsv.mysql2xsv(host=args.params[1], port=args.params[2], user=args.params[3], password=args.params[4],
                             db=args.params[5], query=args.params[6])
+        elif args.params[0].lower() == "neo4j" and len(args.params) == 6:
+            t2xsv.neo4j2xsv(host=args.params[1], port=args.params[2], user=args.params[3], password=args.params[4],
+                            query=args.params[5])
+        elif args.params[0].lower() == "sqlite" and len(args.params) == 3:
+            t2xsv.sqlite2xsv(path=args.params[1], query=args.params[2])
         else:
             print("Either undefined input source, or incorrect number / order of arguments")
 
