@@ -48,8 +48,8 @@ class Table2XSV(object):
         _driver = neo4j.GraphDatabase.driver("bolt://{}:{}".format(kwargs["host"], kwargs["port"]),
                                              auth=(kwargs["user"], kwargs["password"]))
         with _driver.session() as _session:
-            _result = _session.run(kwargs["query"])
-        _df = pd.DataFrame([_r.values() for _r in _result], columns=_result.keys())
+            _records = _session.run(kwargs["query"])
+        _df = pd.DataFrame([_record.values() for _record in _records], columns=_records.keys())
         _df.to_csv(self.__outfile, index=self.__index, sep=self.__sep, encoding=self.__encoding)
 
     def sqlite2xsv(self, **kwargs):
@@ -65,32 +65,38 @@ class Table2XSV(object):
 if __name__ == "__main__":
     try:
         parser = argparse.ArgumentParser()
-        parser.add_argument("params", nargs="+", help="table type data to XSV with respective config")
         parser.add_argument("-o", "--outfile", default="output {}.csv".format(datetime.now()),
-                            help="provide name for the output file with extension")
-        parser.add_argument("-s", "--sep", default=",", help="provide a separator enclosed in quotes")
-        parser.add_argument("-e", "--encoding", default="utf-8", help="provide an encoding enclosed in quotes")
+                            help="provide name for the output file (with extension as csv)")
+        parser.add_argument("-s", "--sep", default=",", help="provide a separator")
+        parser.add_argument("-e", "--encoding", default="utf-8", help="provide an encoding")
+
+        parser.add_argument("--source_type",
+                            help="provide source type, possible types csv, excel, mysql, neo4j and sqlite")
+        parser.add_argument("--path", help="provide file path (csv, excel and sqlite only)")
+        parser.add_argument("--sheet_name", help="provide sheet name (excel only)")
+        parser.add_argument("--host", help="provide host (mysql and neo4j only)")
+        parser.add_argument("--port", help="provide port (mysql and neo4j only)")
+        parser.add_argument("--user", help="provide user (mysql and neo4j only)")
+        parser.add_argument("--password", help="provide password (mysql and neo4j only)")
+        parser.add_argument("--db", help="provide database name (mysql only)")
+        parser.add_argument("--query", help="provide query (mysql, neo4j and sqlite only)")
         args = parser.parse_args()
 
         t2xsv = Table2XSV(args.outfile, args.sep, args.encoding)
 
-        if len(args.params) == 1:
-            print("Please refer command line args help by using --help or go through the manual")
-
-        if args.params[0].lower() == "csv" and len(args.params) == 2:
-            t2xsv.csv2xsv(path=args.params[1])
-        elif args.params[0].lower() == "excel" and len(args.params) == 3:
-            t2xsv.excel2xsv(path=args.params[1], sheet=args.params[2])
-        elif args.params[0].lower() == "mysql" and len(args.params) == 7:
-            t2xsv.mysql2xsv(host=args.params[1], port=args.params[2], user=args.params[3], password=args.params[4],
-                            db=args.params[5], query=args.params[6])
-        elif args.params[0].lower() == "neo4j" and len(args.params) == 6:
-            t2xsv.neo4j2xsv(host=args.params[1], port=args.params[2], user=args.params[3], password=args.params[4],
-                            query=args.params[5])
-        elif args.params[0].lower() == "sqlite" and len(args.params) == 3:
-            t2xsv.sqlite2xsv(path=args.params[1], query=args.params[2])
+        if args.source_type.lower() == "csv":
+            t2xsv.csv2xsv(path=args.path)
+        elif args.source_type.lower() == "excel":
+            t2xsv.excel2xsv(path=args.path, sheet=args.sheet_name)
+        elif args.source_type.lower() == "mysql":
+            t2xsv.mysql2xsv(host=args.host, port=args.port, user=args.user, password=args.password, db=args.db,
+                            query=args.query)
+        elif args.source_type.lower() == "neo4j":
+            t2xsv.neo4j2xsv(host=args.host, port=args.port, user=args.user, password=args.password, query=args.query)
+        elif args.source_type.lower() == "sqlite":
+            t2xsv.sqlite2xsv(path=args.path, query=args.query)
         else:
-            print("Either undefined input source, or incorrect number / order of arguments")
+            print("Please refer command line args help module by using --help")
 
     except Exception as e:
         print(e)
