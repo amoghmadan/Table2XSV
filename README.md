@@ -13,19 +13,19 @@ Convert Tabular Data to XSV
 pyinstaller --onefile Table2XSV.py --hidden-import='neobolt.packstream.packer' --hidden-import='neobolt.packstream.unpacker' --hidden-import='neobolt.bolt' --hidden-import='neobolt.bolt.io'
 
 ### CSV
-./Table2XSV csv file.csv
+./Table2XSV --source_file=csv --path=file.csv
 ### Excel
-./Table2XSV excel file.xlsx SheetName
+./Table2XSV --source_file=excel --path=file.xlsx --sheet_name=SheetName
 ### MySQL
-./Table2XSV mysql host port user password db "Query"
+./Table2XSV --source_file=mysql --host=127.0.0.1 --port=3306 --user=root --password=toor --db=db_name --query="Query"
 ### Neo4j
-./Table2XSV neo4j host port user password "Query"
+./Table2XSV --source_file=neo4j --host=127.0.0.1 --port=7687 --user=neo4j --password=toor --query="Query"
 ### SQLite
-./Table2XSV sqlite file.db "Query"
+./Table2XSV --source_file=sqlite --path=file.db --query="Query"
 
 ## Optional Arguments
 Specify Output File Name: --outfile or -o
 
-Specify Seperator: --sep or -s
+Specify Separator: --sep or -s
 
 Specify Encoding: --encoding or -e
