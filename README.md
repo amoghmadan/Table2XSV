@@ -10,18 +10,23 @@ Convert Tabular Data to XSV
     pip install pyinstaller
 
 ## Compile
-pyinstaller --onefile Table2XSV.py --hidden-import='neobolt.packstream.packer' --hidden-import='neobolt.packstream.unpacker' --hidden-import='neobolt.bolt' --hidden-import='neobolt.bolt.io'
+pyinstaller --onefile src/Table2XSV.py --hidden-import='neobolt.packstream.packer' --hidden-import='neobolt.packstream.unpacker' --hidden-import='neobolt.bolt' --hidden-import='neobolt.bolt.io'
 
+## Run
 ### CSV
-./Table2XSV --source_file=csv --path=file.csv
+Table2XSV --source=csv --path=file.csv
+
 ### Excel
-./Table2XSV --source_file=excel --path=file.xlsx --sheet_name=SheetName
+Table2XSV --source=excel --path=file.xlsx --sheet=SheetName
+
 ### MySQL
-./Table2XSV --source_file=mysql --host=127.0.0.1 --port=3306 --user=root --password=toor --db=db_name --query="Query"
+Table2XSV --source=mysql --host=127.0.0.1 --port=3306 --user=root --password=toor --db=db_name --query="Query"
+
 ### Neo4j
-./Table2XSV --source_file=neo4j --host=127.0.0.1 --port=7687 --user=neo4j --password=toor --query="Query"
+Table2XSV --source=neo4j --host=127.0.0.1 --port=7687 --user=neo4j --password=toor --query="Query"
+
 ### SQLite
-./Table2XSV --source_file=sqlite --path=file.db --query="Query"
+Table2XSV --source=sqlite --path=file.db --query="Query"
 
 ## Optional Arguments
 Specify Output File Name: --outfile or -o
