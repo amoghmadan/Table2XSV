@@ -70,10 +70,9 @@ if __name__ == "__main__":
         parser.add_argument("-s", "--sep", default=",", help="provide a separator")
         parser.add_argument("-e", "--encoding", default="utf-8", help="provide an encoding")
 
-        parser.add_argument("--source_type",
-                            help="provide source type, possible types csv, excel, mysql, neo4j and sqlite")
+        parser.add_argument("--source", help="provide source type, possible types csv, excel, mysql, neo4j and sqlite")
         parser.add_argument("--path", help="provide file path (csv, excel and sqlite only)")
-        parser.add_argument("--sheet_name", help="provide sheet name (excel only)")
+        parser.add_argument("--sheet", help="provide sheet name (excel only)")
         parser.add_argument("--host", help="provide host (mysql and neo4j only)")
         parser.add_argument("--port", help="provide port (mysql and neo4j only)")
         parser.add_argument("--user", help="provide user (mysql and neo4j only)")
@@ -84,16 +83,16 @@ if __name__ == "__main__":
 
         t2xsv = Table2XSV(args.outfile, args.sep, args.encoding)
 
-        if args.source_type.lower() == "csv":
+        if args.source.lower() == "csv":
             t2xsv.csv2xsv(path=args.path)
-        elif args.source_type.lower() == "excel":
-            t2xsv.excel2xsv(path=args.path, sheet=args.sheet_name)
-        elif args.source_type.lower() == "mysql":
+        elif args.source.lower() == "excel":
+            t2xsv.excel2xsv(path=args.path, sheet=args.sheet)
+        elif args.source.lower() == "mysql":
             t2xsv.mysql2xsv(host=args.host, port=args.port, user=args.user, password=args.password, db=args.db,
                             query=args.query)
-        elif args.source_type.lower() == "neo4j":
+        elif args.source.lower() == "neo4j":
             t2xsv.neo4j2xsv(host=args.host, port=args.port, user=args.user, password=args.password, query=args.query)
-        elif args.source_type.lower() == "sqlite":
+        elif args.source.lower() == "sqlite":
             t2xsv.sqlite2xsv(path=args.path, query=args.query)
         else:
             print("Please refer command line args help module by using --help")
