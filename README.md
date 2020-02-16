@@ -1,36 +1,34 @@
 # Table2XSV
 Convert Tabular Data to XSV
 
+## Ubuntu
+    apt install python[VERSION IF ANY]-dev libssl-dev libmysqlclient-dev
+
 ## Requirements
-    pip install pandas
-    pip install xlrd
-    pip install mysqlclient
-    pip install neo4j
-    pip install sqlalchemy
-    pip install pyinstaller
+    pip install pandas xlrd sqlalchemy mysqlclient neo4j pyinstaller
 
 ## Compile
 pyinstaller --onefile src/Table2XSV.py --hidden-import='neobolt.packstream.packer' --hidden-import='neobolt.packstream.unpacker' --hidden-import='neobolt.bolt' --hidden-import='neobolt.bolt.io'
 
 ## Run
 ### CSV
-Table2XSV --source=csv --path=file.csv
+Table2XSV csv --path=file.csv
 
 ### Excel
-Table2XSV --source=excel --path=file.xlsx --sheet=SheetName
-
-### MySQL
-Table2XSV --source=mysql --host=127.0.0.1 --port=3306 --user=root --password=toor --db=db_name --query="Query"
-
-### Neo4j
-Table2XSV --source=neo4j --host=127.0.0.1 --port=7687 --user=neo4j --password=toor --query="Query"
+Table2XSV excel --path=<FILE_PATH>.xlsx --sheet=<SHEET_NAME>
 
 ### SQLite
-Table2XSV --source=sqlite --path=file.db --query="Query"
+Table2XSV sqlite --path=<FILE_PATH>.db --query=<QUERY_HERE>
+
+### MySQL
+Table2XSV mysql --host=<DEFAULT: LOCALHOST> --port=<DEFAULT_PORT> --user=<USER_HERE> --db=<DB_HERE> --query=<QUERY_HERE>
+
+### Neo4j
+Table2XSV neo4j --host=<DEFAULT: LOCALHOST> --port=<DEFAULT_PORT> --user=<USER_HERE> --query=<QUERY_HERE>
 
 ## Optional Arguments
-Specify Output File Name: --outfile or -o
+Specify Output File Name: --outfile or -o [Default: output current_date_time.csv]
 
-Specify Separator: --sep or -s
+Specify Separator: --sep or -s [Default: ,]
 
-Specify Encoding: --encoding or -e
+Specify Encoding: --encoding or -e [Default: utf-8]
