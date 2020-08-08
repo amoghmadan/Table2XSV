@@ -14,8 +14,6 @@ Convert Tabular Data to XSV
 pyinstaller --onefile src/Table2XSV.py --hidden-import='neobolt.packstream.packer' --hidden-import='neobolt.packstream.unpacker' --hidden-import='neobolt.bolt' --hidden-import='neobolt.bolt.io'
 
 ## Help
-Table2XSV -h
-
 ### CSV
 Table2XSV csv -h
 

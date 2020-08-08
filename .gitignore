@@ -1,0 +1,6 @@
+.idea
+.vscode
+venv
+build
+dist
+*.py[cdo]
