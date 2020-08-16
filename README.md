@@ -8,7 +8,7 @@ Convert Tabular Data to XSV
     Install Visual C++ Redistributable [Latest]
 
 ## Requirements
-    pip install pandas xlrd sqlalchemy mysqlclient neo4j pyinstaller
+    pip install typer pandas xlrd sqlalchemy mysqlclient neo4j pyinstaller
 
 ## Compile
 pyinstaller --onefile src/Table2XSV.py --hidden-import='neobolt.packstream.packer' --hidden-import='neobolt.packstream.unpacker' --hidden-import='neobolt.bolt' --hidden-import='neobolt.bolt.io'
