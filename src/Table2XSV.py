@@ -6,7 +6,7 @@ from datetime import datetime
 import sqlite3
 import pandas as pd
 from MySQLdb import Connection
-from neo4j import GraphDatabase
+from neo4j import GraphDatabase, Result
 
 
 class Table2XSV(object):
@@ -110,9 +110,10 @@ class Table2XSV(object):
 
         password: str = getpass(prompt='Password: ', stream=None)
         uri: str = 'bolt://{}:{}'.format(kwargs['host'], kwargs['port'])
-        driver = GraphDatabase.driver(uri, auth=(kwargs['user'], password))
+        driver: GraphDatabase = GraphDatabase.driver(uri, auth=(kwargs['user'], password))
         with driver.session() as session:
-            records = session.run(kwargs['query'])
+            records: Result = session.run(kwargs['query'])
+        driver.close()
         return pd.DataFrame([record.values() for record in records], columns=records.keys())
 
     def run(self) -> None:

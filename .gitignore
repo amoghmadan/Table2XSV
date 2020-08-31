@@ -4,3 +4,4 @@ venv
 build
 dist
 *.py[cdo]
+**Table2XSV.spec
