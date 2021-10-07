@@ -23,7 +23,11 @@ class TestTable2XSV(unittest.TestCase):
     def tearDown(self: TestTable2XSV) -> None:
         """Tear Down Instance"""
 
-        self.file.unlink(missing_ok=True)
+        # TODO: Drop py37, replace code with self.file.unlink(missing_ok=True)
+        try:
+            self.file.unlink()
+        except FileNotFoundError:
+            pass
 
     def test_csv(self: TestTable2XSV) -> None:
         """Test CSV"""
