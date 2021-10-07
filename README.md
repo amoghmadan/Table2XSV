@@ -17,8 +17,8 @@ Convert Tabular Data to XSV
     pip install -r requirements/development.txt
 
 ## Compile
-tox -c . -e py{37,38,39,310}-pyinstaller
-Find Build Under src/dist/table2xsv
+tox -c . -e py{37,38,39}-pyinstaller
+Find Build Under src/dist/Table2XSV-py{37,38,39}
 
 ## Help
 ### CSV
