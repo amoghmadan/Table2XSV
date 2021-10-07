@@ -5,7 +5,7 @@ from pathlib import Path
 
 from pandas import DataFrame
 
-from main import Table2XSV
+from table2xsv.main import Table2XSV
 
 
 class TestTable2XSV(unittest.TestCase):
