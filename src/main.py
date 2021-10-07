@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-import sys
 import sqlite3
+import sys
 from argparse import ArgumentParser, Namespace
 from datetime import datetime
 from getpass import getpass
