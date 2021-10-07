@@ -13,30 +13,14 @@ class TestTable2XSV(unittest.TestCase):
 
     BASE_DIR: Path = Path(__file__).parent.parent
     ASSETS_DIR: Path = BASE_DIR / "assets"
-    OUTFILE: str = "output.csv"
-
-    def setUp(self: TestTable2XSV) -> None:
-        """Set Up Instance"""
-
-        self.file: Path = Path(self.OUTFILE).resolve()
-
-    def tearDown(self: TestTable2XSV) -> None:
-        """Tear Down Instance"""
-
-        # TODO: Drop py37, replace code with self.file.unlink(missing_ok=True)
-        try:
-            self.file.unlink()
-        except FileNotFoundError:
-            pass
 
     def test_csv(self: TestTable2XSV) -> None:
         """Test CSV"""
 
         kwargs: dict = {
             "path": self.ASSETS_DIR / "input.csv",
-            "outfile": self.OUTFILE,
         }
-        result: DataFrame = Table2XSV.csv2xsv(**kwargs)
+        result: DataFrame = Table2XSV.csv2df(**kwargs)
         self.assertTrue(isinstance(result, DataFrame))
 
     def test_excel(self: TestTable2XSV) -> None:
@@ -45,9 +29,8 @@ class TestTable2XSV(unittest.TestCase):
         kwargs: dict = {
             "path": self.ASSETS_DIR / "input.xlsx",
             "sheet": "Sheet1",
-            "outfile": self.OUTFILE,
         }
-        result: DataFrame = Table2XSV.excel2xsv(**kwargs)
+        result: DataFrame = Table2XSV.excel2df(**kwargs)
         self.assertTrue(isinstance(result, DataFrame))
 
     def test_sqlite(self: TestTable2XSV) -> None:
@@ -56,9 +39,8 @@ class TestTable2XSV(unittest.TestCase):
         kwargs: dict = {
             "path": self.ASSETS_DIR / "input.sqlite3",
             "query": "SELECT 1 AS One;",
-            "outfile": self.OUTFILE,
         }
-        result: DataFrame = Table2XSV.sqlite2xsv(**kwargs)
+        result: DataFrame = Table2XSV.sqlite2df(**kwargs)
         self.assertTrue(isinstance(result, DataFrame))
 
     @unittest.skip("MySQL Different Machine")
@@ -69,9 +51,8 @@ class TestTable2XSV(unittest.TestCase):
             "user": "root",
             "password": "root",
             "query": "SELECT 1 AS One;",
-            "outfile": self.OUTFILE,
         }
-        result: DataFrame = Table2XSV.mysql2xsv(**kwargs)
+        result: DataFrame = Table2XSV.mysql2df(**kwargs)
         self.assertTrue(isinstance(result, DataFrame))
 
     @unittest.skip("Neo4j Different Machine")
@@ -82,7 +63,6 @@ class TestTable2XSV(unittest.TestCase):
             "user": "neo4j",
             "password": "neo4j",
             "query": "MATCH 1 AS One;",
-            "outfile": self.OUTFILE,
         }
-        result: DataFrame = Table2XSV.neo4j2xsv(**kwargs)
+        result: DataFrame = Table2XSV.neo4j2df(**kwargs)
         self.assertTrue(isinstance(result, DataFrame))

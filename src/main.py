@@ -17,16 +17,14 @@ class Table2XSV(object, metaclass=type):
     """Table 2 XSV"""
 
     index: bool = False
-    now: str = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
+    now: str = datetime.now().strftime("%Y-%m-%dT%H-%M-%S.%fZ")
     extra_optional_arguments: list = [
         {
             "short": "-o",
             "long": "--outfile",
             "type": str,
-            "default": "output{}.csv".format(now),
-            "help": """
-            Provide path to output XSV file, default=output-%Y-%m-%d-%H-%M-%S.csv
-            """.strip(),
+            "default": "output-[{now}].csv".format(now=now),
+            "help": "Provide path to output XSV file, default=output-[datetime].csv",
         },
         {
             "short": "-e",
@@ -164,19 +162,19 @@ class Table2XSV(object, metaclass=type):
         return neo4j
 
     @staticmethod
-    def csv2xsv(**kwargs: str) -> DataFrame:
+    def csv2df(**kwargs: str) -> DataFrame:
         """Process CSV"""
 
         return read_csv(kwargs["path"])
 
     @staticmethod
-    def excel2xsv(**kwargs: str) -> DataFrame:
+    def excel2df(**kwargs: str) -> DataFrame:
         """Process Excel"""
 
         return read_excel(kwargs["path"], sheet_name=kwargs["sheet"])
 
     @staticmethod
-    def sqlite2xsv(**kwargs: str) -> DataFrame:
+    def sqlite2df(**kwargs: str) -> DataFrame:
         """Process SQLite"""
 
         with sqlite3.connect(kwargs["path"]) as connection:
@@ -184,7 +182,7 @@ class Table2XSV(object, metaclass=type):
         return df
 
     @staticmethod
-    def mysql2xsv(**kwargs: str | int) -> DataFrame:
+    def mysql2df(**kwargs: str | int) -> DataFrame:
         """Process MySQL"""
 
         kwargs["passwd"] = getpass(prompt="Password: ", stream=None)
@@ -193,7 +191,7 @@ class Table2XSV(object, metaclass=type):
         return df
 
     @staticmethod
-    def neo4j2xsv(**kwargs: str | int) -> DataFrame:
+    def neo4j2df(**kwargs: str | int) -> DataFrame:
         """Process Neo4j"""
 
         password: str = getpass(prompt="Password: ", stream=None)
@@ -210,11 +208,11 @@ class Table2XSV(object, metaclass=type):
         """Run"""
 
         call: dict = {
-            "csv": self.csv2xsv,
-            "excel": self.excel2xsv,
-            "sqlite": self.sqlite2xsv,
-            "mysql": self.mysql2xsv,
-            "neo4j": self.neo4j2xsv,
+            "csv": self.csv2df,
+            "excel": self.excel2df,
+            "sqlite": self.sqlite2df,
+            "mysql": self.mysql2df,
+            "neo4j": self.neo4j2df,
         }
 
         if self.args.command not in call:
@@ -237,7 +235,7 @@ def execute():
         table2xsv.run()
     except Exception as exc:
         tc, te, tb = sys.exc_info()
-        print("{}: {}".format(tc.__name__, exc))
+        print("{klass}: {exception}".format(klass=tc.__name__, exception=exc))
 
 
 if __name__ == "__main__":
