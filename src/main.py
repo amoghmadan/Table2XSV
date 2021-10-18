@@ -13,8 +13,8 @@ from pandas import read_csv, read_excel, read_sql, read_sql_query, DataFrame
 __version__ = "1.0.0"
 
 
-class Table2XSV(object, metaclass=type):
-    """Table 2 XSV"""
+class Table2XSV(object):
+    """Table2XSV"""
 
     index: bool = False
     now: str = datetime.now().strftime("%Y-%m-%dT%H-%M-%S.%fZ")
@@ -23,7 +23,7 @@ class Table2XSV(object, metaclass=type):
             "short": "-o",
             "long": "--outfile",
             "type": str,
-            "default": "output-[{now}].csv".format(now=now),
+            "default": "output-[%s].csv" % (now,),
             "help": "Provide path to output XSV file, default=output-[datetime].csv",
         },
         {
@@ -45,45 +45,21 @@ class Table2XSV(object, metaclass=type):
     def __init__(self: Table2XSV) -> None:
         """Setup Parser and Sub-parsers"""
 
+        # Version Display
+        version: str = "%s %s" % (self.__class__.__name__, __version__)
+
         # Parser / Sub Parser
-        parser: ArgumentParser = ArgumentParser(description="Table 2 XSV")
-        self.sub_parser = parser.add_subparsers(title="commands", dest="command")
+        parser: ArgumentParser = ArgumentParser(description="Table2XSV")
+        parser.add_argument("-v", "--version", action="version", version=version)
+        sub_parser = parser.add_subparsers(title="commands", dest="command")
 
         # Declare Sub Commands
-        csv: ArgumentParser = self._csv_parser()
-        excel: ArgumentParser = self._excel_parser()
-        sqlite: ArgumentParser = self._sqlite_parser()
-        mysql: ArgumentParser = self._mysql_parser()
-        neo4j: ArgumentParser = self._neo4j_parser()
-
-        # Add Extra Optional Arguments
-        commands: list = [csv, excel, sqlite, mysql, neo4j]
-        for command in commands:
-            for entry in self.extra_optional_arguments:
-                command.add_argument(
-                    entry["short"],
-                    entry["long"],
-                    type=entry["type"],
-                    default=entry["default"],
-                    help=entry["help"],
-                )
-
-        # Get Arguments Passed By User
-        self.args: Namespace = parser.parse_args()
-
-    def _csv_parser(self) -> ArgumentParser:
-        """CSV Arguments"""
-
-        csv: ArgumentParser = self.sub_parser.add_parser(
+        csv: ArgumentParser = sub_parser.add_parser(
             "csv", help="Read from XSV write to XSV"
         )
         csv.add_argument("path", type=str, help="Provide path of XSV file")
-        return csv
 
-    def _excel_parser(self) -> ArgumentParser:
-        """Excel Arguments"""
-
-        excel: ArgumentParser = self.sub_parser.add_parser(
+        excel: ArgumentParser = sub_parser.add_parser(
             "excel", help="Read from Excel Sheet write to XSV"
         )
         excel.add_argument("path", type=str, help="Provide path of Excel file")
@@ -94,24 +70,16 @@ class Table2XSV(object, metaclass=type):
             default="Sheet1",
             help="Provide name of sheet, default=Sheet1",
         )
-        return excel
 
-    def _sqlite_parser(self) -> ArgumentParser:
-        """SQLite Arguments"""
-
-        sqlite: ArgumentParser = self.sub_parser.add_parser(
+        sqlite: ArgumentParser = sub_parser.add_parser(
             "sqlite", help="Read from SQLite query write to XSV"
         )
         sqlite.add_argument("path", type=str, help="Provide path of SQLite file")
         sqlite.add_argument(
             "query", type=str, help="Provide query to return tabular data"
         )
-        return sqlite
 
-    def _mysql_parser(self) -> ArgumentParser:
-        """MySQL Arguments"""
-
-        mysql: ArgumentParser = self.sub_parser.add_parser(
+        mysql: ArgumentParser = sub_parser.add_parser(
             "mysql", help="Read from MySQL query write to XSV"
         )
         mysql.add_argument("user", type=str, help="MySQL user to connect")
@@ -133,12 +101,8 @@ class Table2XSV(object, metaclass=type):
             default=3306,
             help="MySQL port to connect, default=3306",
         )
-        return mysql
 
-    def _neo4j_parser(self) -> ArgumentParser:
-        """Neo4j Arguments"""
-
-        neo4j: ArgumentParser = self.sub_parser.add_parser(
+        neo4j: ArgumentParser = sub_parser.add_parser(
             "neo4j", help="Read from Neo4j query write to XSV"
         )
         neo4j.add_argument("user", type=str, help="Neo4j user to connect")
@@ -157,9 +121,23 @@ class Table2XSV(object, metaclass=type):
             "--port",
             type=int,
             default=7687,
-            help="Neo4j port to connect, default=7687",
+            help="Neo4j bolt port to connect, default=7687",
         )
-        return neo4j
+
+        # Add Extra Optional Arguments
+        commands: list = [choice for choice in sub_parser.choices.values()]
+        for command in commands:
+            for entry in self.extra_optional_arguments:
+                command.add_argument(
+                    entry["short"],
+                    entry["long"],
+                    type=entry["type"],
+                    default=entry["default"],
+                    help=entry["help"],
+                )
+
+        # Get Arguments Passed By User
+        self.args: Namespace = parser.parse_args()
 
     @staticmethod
     def csv2df(**kwargs: str) -> DataFrame:
@@ -195,30 +173,26 @@ class Table2XSV(object, metaclass=type):
         """Process Neo4j"""
 
         password: str = getpass(prompt="Password: ", stream=None)
-        uri: str = "bolt://{host}:{port}".format(**kwargs)
-        auth: tuple = (kwargs["uri"], password)
+        uri: str = "bolt://%s:%d" % (kwargs["host"], kwargs["port"])
+        auth: tuple = (kwargs["user"], password)
         with GraphDatabase.bolt_driver(uri, auth=auth) as driver:
             with driver.session() as session:
                 records: Result = session.run(kwargs["query"])
-        return DataFrame(
-            [record.values() for record in records], columns=records.keys()
-        )
+        return DataFrame([r.values() for r in records], columns=records.keys())
 
-    def run(self: Table2XSV) -> None:
-        """Run"""
+    def process(self: Table2XSV) -> None:
+        """Process"""
 
-        call: dict = {
-            "csv": self.csv2df,
-            "excel": self.excel2df,
-            "sqlite": self.sqlite2df,
-            "mysql": self.mysql2df,
-            "neo4j": self.neo4j2df,
-        }
-
-        if self.args.command not in call:
+        if not self.args.command:
             sys.exit("Please enter a sub command, for help use -h flag")
 
-        df: DataFrame = call[self.args.command](**vars(self.args))
+        function_name: str = self.args.command + "2df"
+        if not hasattr(self, function_name):
+            sys.exit(
+                "Process for sub command %r is not implemented" % (self.args.command,)
+            )
+
+        df: DataFrame = getattr(self, function_name)(**vars(self.args))
         df.to_csv(
             self.args.outfile,
             index=self.index,
@@ -227,18 +201,18 @@ class Table2XSV(object, metaclass=type):
         )
 
 
-def execute():
-    """Execute"""
+def main():
+    """Main"""
 
     try:
         table2xsv: Table2XSV = Table2XSV()
-        table2xsv.run()
+        table2xsv.process()
     except Exception as exc:
         tc, te, tb = sys.exc_info()
-        print("{klass}: {exception}".format(klass=tc.__name__, exception=exc))
+        sys.stdout.write("%s: %s" % (tc.__name__, exc))
 
 
 if __name__ == "__main__":
-    """Main"""
+    """Scope"""
 
-    execute()
+    main()
