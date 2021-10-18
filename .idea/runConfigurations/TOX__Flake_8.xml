@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="TOX: Flake8" type="Tox" factoryName="Tox">
+  <configuration default="false" name="TOX: Flake 8" type="Tox" factoryName="Tox">
     <module name="Table2XSV" />
     <option name="INTERPRETER_OPTIONS" value="" />
     <option name="PARENT_ENVS" value="true" />
