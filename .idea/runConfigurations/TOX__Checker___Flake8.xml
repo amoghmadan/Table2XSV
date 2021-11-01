@@ -1,10 +1,10 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="TOX: Bandit" type="Tox" factoryName="Tox">
+  <configuration default="false" name="TOX (Checker): Flake8" type="Tox" factoryName="Tox">
     <module name="Table2XSV" />
     <option name="INTERPRETER_OPTIONS" value="" />
     <option name="PARENT_ENVS" value="true" />
     <option name="SDK_HOME" value="C:\Users\amogh.madan\PycharmProjects\Table2XSV\venv\Scripts\python.exe" />
-    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     <option name="IS_MODULE_SDK" value="false" />
     <option name="ADD_CONTENT_ROOTS" value="true" />
     <option name="ADD_SOURCE_ROOTS" value="true" />
@@ -13,7 +13,7 @@
     </arguments>
     <runOnlyEnvs>
       <array>
-        <option value="py{37,38,39}-bandit" />
+        <option value="py{37,38,39}-flake8" />
       </array>
     </runOnlyEnvs>
     <method v="2" />

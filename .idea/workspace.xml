@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ad6b76c0-59b7-4bf4-9448-d2a6b18bda1a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/TOX__Build___Distributable__All_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/TOX__Build___Package.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/TOX__Testing___Coverage__PyTest_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/output-[2021-11-01T12-12-55.479480Z].csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/output-[2021-11-01T12-13-09.845462Z].csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/setup.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/table2xsv/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/table2xsv/core/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/table2xsv/core/base.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/table2xsv/core/exceptions.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/table2xsv/core/formatter.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/table2xsv/core/management/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/table2xsv/core/management/helpers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/table2xsv/core/management/utility.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/table2xsv/core/parser.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/table2xsv/core/wrapper.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/table2xsv/extended/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/table2xsv/extended/base.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/table2xsv/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/table2xsv/management/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/table2xsv/management/commands/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/table2xsv/management/commands/csv.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/table2xsv/management/commands/excel.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/table2xsv/management/commands/mysql.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/table2xsv/management/commands/neo4j.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/table2xsv/management/commands/sqlite.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/table2xsv/utils/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/table2xsv/utils/getter.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tox.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Table2XSV.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Table2XSV.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/TOX__Bandit.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/TOX__Checker___Bandit.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/TOX__Black__Check_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/TOX__Checker___Black__Check_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/TOX__Black__Format_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/TOX__Checker___Black__Format_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/TOX__Flake_8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/TOX__Checker___Flake8.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/TOX__PyCodeStyle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/TOX__Checker___PyCodeStyle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/TOX__PyInstaller.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/TOX__PyTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/TOX__Testing___PyTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Test__Table2XSV.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Tests__Unit___Process_to_DF.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/input.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/assets/input.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tox.ini" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="20BAhUc4ga9QpkT9uXY1J0ZC50m" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\amogh.madan\PycharmProjects\Table2XSV\tests" />
+    </key>
+  </component>
+  <component name="RunManager" selected="tox.TOX (Build): Executable [All]">
+    <list>
+      <item itemvalue="Python tests.Tests (Unit): Process to DF" />
+      <item itemvalue="tox.TOX (Build): Package" />
+      <item itemvalue="tox.TOX (Build): Executable [All]" />
+      <item itemvalue="tox.TOX (Checker): Bandit" />
+      <item itemvalue="tox.TOX (Checker): PyCodeStyle" />
+      <item itemvalue="tox.TOX (Checker): Flake8" />
+      <item itemvalue="tox.TOX (Checker): Black (Check)" />
+      <item itemvalue="tox.TOX (Checker): Black (Format)" />
+      <item itemvalue="tox.TOX (Testing): PyTest" />
+      <item itemvalue="tox.TOX (Testing): Coverage (PyTest)" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ad6b76c0-59b7-4bf4-9448-d2a6b18bda1a" name="Changes" comment="" />
+      <created>1635507727572</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1635507727572</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>
