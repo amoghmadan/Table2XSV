@@ -19,13 +19,17 @@ Note: Replace X with Python Minor Version
     pip install tox pluggy
 
 ## Requirements [For Development]
-    pip install tox pluggy
+    pip install toml tox pluggy
     pip install -r requirements.txt
 
-## Compile
-    tox -c src -e py3X-pyinstaller
+## Command Flow [For Build]
+    tox -c . -e py3X-buid
 
-Find Dist Under src/dist/Table2XSV-py3X
+Note: Replace X with Python Minor Version
+
+## Install [Local]
+    cd dist
+    pip install Table2XSV-{veersion}-py3X-none-any.whl
 
 Note: Replace X with Python Minor Version
 
