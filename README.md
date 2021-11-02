@@ -1,12 +1,17 @@
 # Table2XSV
-Convert Tabular Data to XSV [CSV, TSV, PSV, etc.]
+Convert Tabular Data to XSV [CSV, TSV, PSV and Others]
 
 **Python 3.9 >= 3.X >= 3.7**
 
-## Ubuntu
-    sudo apt-get install python3.X-venv python3.X-dev libssl-dev libmysqlclient-dev
-
+## Debian [Ubuntu, Mint and Others]
+    sudo apt-get install python3.X-venv python3.X-dev libssl-dev libmysqlclient-dev build-essential
 Note: Replace X with Python Minor Version
+
+## Redhat [CentOS, Rocky, Fedora and Others]
+    sudo yum/dnf install python3.X python3.X-devel ssl-devel mysql-devel
+Note: Replace X with Python Minor Version
+
+Caution: ```Not a tried and tested method but known to work. If mysql-devel thing does not work replace mysqlclient package with pymysql package in the requirements.txt, setup.cfg, tox.ini and the mysql.py file.```
 
 ## Windows
 Download, MS VS C++ Redistributable: [Microsoft Visual Studio C++ Redistributable]
@@ -15,21 +20,26 @@ Download, Python 3.X: [Python 3.X]
 
 Note: Replace X with Python Minor Version
 
-## Requirements [For Build]
-    pip install tox pluggy
+## Requirements [Build]
+    pip install toml tox pluggy
 
-## Requirements [For Development]
+## Requirements [Development]
     pip install toml tox pluggy
     pip install -r requirements.txt
 
-## Command Flow [For Build]
+## Generate [Build (Distribution and Wheel)]
     tox -c . -e py3X-buid
 
 Note: Replace X with Python Minor Version
 
-## Install [Local]
+## Install [Wheel]
     cd dist
-    pip install Table2XSV-{veersion}-py3X-none-any.whl
+    pip install Table2XSV-{version}-py3X-none-any.whl
+
+Note: Replace X with Python Minor Version
+
+# Generate [Executable]
+    tox -c . -e py3X-build-exe  # All Optionals Will Be Installed
 
 Note: Replace X with Python Minor Version
 
