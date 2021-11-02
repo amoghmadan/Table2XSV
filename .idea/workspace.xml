@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ad6b76c0-59b7-4bf4-9448-d2a6b18bda1a" name="Changes" comment="Refactored the entire code base, added packaging to it.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,18 +46,18 @@
       <recent name="C:\Users\amogh.madan\PycharmProjects\Table2XSV\tests" />
     </key>
   </component>
-  <component name="RunManager" selected="tox.TOX (Build): Executable [All]">
+  <component name="RunManager" selected="tox.TOX (Build): Package">
     <list>
       <item itemvalue="Python tests.Tests (Unit): Process to DF" />
-      <item itemvalue="tox.TOX (Build): Executable [All]" />
       <item itemvalue="tox.TOX (Build): Package" />
+      <item itemvalue="tox.TOX (Build): Executable [All]" />
       <item itemvalue="tox.TOX (Checker): Bandit" />
+      <item itemvalue="tox.TOX (Checker): PyCodeStyle" />
+      <item itemvalue="tox.TOX (Checker): Flake8" />
       <item itemvalue="tox.TOX (Checker): Black (Check)" />
       <item itemvalue="tox.TOX (Checker): Black (Format)" />
-      <item itemvalue="tox.TOX (Checker): Flake8" />
-      <item itemvalue="tox.TOX (Checker): PyCodeStyle" />
-      <item itemvalue="tox.TOX (Testing): Coverage (PyTest)" />
       <item itemvalue="tox.TOX (Testing): PyTest" />
+      <item itemvalue="tox.TOX (Testing): Coverage (PyTest)" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
