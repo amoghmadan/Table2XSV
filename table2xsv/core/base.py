@@ -98,7 +98,7 @@ class BaseCommand:
     def get_version(self):
         """
         Return the Table2XSV version, which should be correct for all built-in
-        TableXSV commands. User-supplied commands can override this method to
+        Table2XSV commands. User-supplied commands can override this method to
         return their own version.
         """
         return self.version
