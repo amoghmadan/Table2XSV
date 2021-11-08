@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ad6b76c0-59b7-4bf4-9448-d2a6b18bda1a" name="Changes" comment="">
+    <list default="true" id="ad6b76c0-59b7-4bf4-9448-d2a6b18bda1a" name="Changes" comment="setup.cfg added classifiers">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/setup.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/table2xsv/core/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/table2xsv/core/base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/table2xsv/management/commands/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/table2xsv/management/commands/__init__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +119,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636352110921</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="setup.cfg added classifiers">
+      <created>1636359968551</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1636359968551</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -141,6 +149,7 @@
     <MESSAGE value="Added Specific Versions and Removed Black Config" />
     <MESSAGE value="workspace.xml auto updated" />
     <MESSAGE value="Removed setup_requires" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed setup_requires" />
+    <MESSAGE value="setup.cfg added classifiers" />
+    <option name="LAST_COMMIT_MESSAGE" value="setup.cfg added classifiers" />
   </component>
 </project>
