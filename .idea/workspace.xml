@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ad6b76c0-59b7-4bf4-9448-d2a6b18bda1a" name="Changes" comment="Refactored the entire code base, added packaging to it.">
+    <list default="true" id="ad6b76c0-59b7-4bf4-9448-d2a6b18bda1a" name="Changes" comment="PyCharm config to get README visible on the project open-up state.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/setup.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tox.ini" beforeDir="false" afterPath="$PROJECT_DIR$/tox.ini" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +49,7 @@
       <recent name="C:\Users\amogh.madan\PycharmProjects\Table2XSV\tests" />
     </key>
   </component>
-  <component name="RunManager" selected="tox.TOX (Build): Package">
+  <component name="RunManager" selected="tox.TOX (Checker): Black (Format)">
     <list>
       <item itemvalue="Python tests.Tests (Unit): Process to DF" />
       <item itemvalue="tox.TOX (Build): Package" />
@@ -75,7 +79,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635765240816</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="PyCharm config to get README visible on the project open-up state.">
+      <created>1635850818124</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1635850818124</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -92,6 +103,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Refactored the entire code base, added packaging to it." />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactored the entire code base, added packaging to it." />
+    <MESSAGE value="PyCharm config to get README visible on the project open-up state." />
+    <option name="LAST_COMMIT_MESSAGE" value="PyCharm config to get README visible on the project open-up state." />
   </component>
 </project>
