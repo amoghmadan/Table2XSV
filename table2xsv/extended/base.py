@@ -52,7 +52,7 @@ class Table2XSVBaseCommand(BaseCommand):
         """Process to DataFrame"""
 
         raise NotImplementedError(
-            "subclasses of %s must provide a process2df() method"
+            "subclasses of %s must provide a process_to_df() method"
             % (self.__class__.__name__,)
         )
 
