@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ad6b76c0-59b7-4bf4-9448-d2a6b18bda1a" name="Changes" comment="setup.cfg added classifiers">
+    <list default="true" id="ad6b76c0-59b7-4bf4-9448-d2a6b18bda1a" name="Changes" comment="TableXSV -&gt; Table2XSV [Fixed Typo]">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/table2xsv/core/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/table2xsv/core/base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/table2xsv/management/commands/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/table2xsv/management/commands/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/table2xsv/extended/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/table2xsv/extended/base.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +125,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636359968551</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="TableXSV -&gt; Table2XSV [Fixed Typo]">
+      <created>1636393069716</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1636393069716</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -150,6 +156,7 @@
     <MESSAGE value="workspace.xml auto updated" />
     <MESSAGE value="Removed setup_requires" />
     <MESSAGE value="setup.cfg added classifiers" />
-    <option name="LAST_COMMIT_MESSAGE" value="setup.cfg added classifiers" />
+    <MESSAGE value="TableXSV -&gt; Table2XSV [Fixed Typo]" />
+    <option name="LAST_COMMIT_MESSAGE" value="TableXSV -&gt; Table2XSV [Fixed Typo]" />
   </component>
 </project>
