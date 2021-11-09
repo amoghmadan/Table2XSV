@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ad6b76c0-59b7-4bf4-9448-d2a6b18bda1a" name="Changes" comment="Renamed the method to the actual name process2df -&gt; process_to_df">
+    <list default="true" id="ad6b76c0-59b7-4bf4-9448-d2a6b18bda1a" name="Changes" comment="Fixed Doc String for handle method">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/table2xsv/extended/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/table2xsv/extended/base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/setup.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,7 +141,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636432814019</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Fixed Doc String for handle method">
+      <created>1636433619521</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1636433619521</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -165,6 +174,7 @@
     <MESSAGE value="setup.cfg added classifiers" />
     <MESSAGE value="TableXSV -&gt; Table2XSV [Fixed Typo]" />
     <MESSAGE value="Renamed the method to the actual name process2df -&gt; process_to_df" />
-    <option name="LAST_COMMIT_MESSAGE" value="Renamed the method to the actual name process2df -&gt; process_to_df" />
+    <MESSAGE value="Fixed Doc String for handle method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed Doc String for handle method" />
   </component>
 </project>
