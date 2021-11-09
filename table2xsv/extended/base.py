@@ -67,7 +67,7 @@ class Table2XSVBaseCommand(BaseCommand):
         )
 
     def handle(self, *args, **options):
-        """The actual logic of the command. Subclasses must implement this method."""
+        """The actual logic of the command."""
 
         df = self.process_to_df(*args, **options)
         self.process_outfile(df, **options)
