@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ad6b76c0-59b7-4bf4-9448-d2a6b18bda1a" name="Changes" comment="Update dependencies to the latest version.">
+    <list default="true" id="ad6b76c0-59b7-4bf4-9448-d2a6b18bda1a" name="Changes" comment="Dependency resolution multiple Python versions.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/setup.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/setup.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tox.ini" beforeDir="false" afterPath="$PROJECT_DIR$/tox.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/table2xsv/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/table2xsv/__init__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,7 +161,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636474124483</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Dependency resolution multiple Python versions.">
+      <created>1636522369034</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1636522369034</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -191,6 +196,7 @@
     <MESSAGE value="Renamed the method to the actual name process2df -&gt; process_to_df" />
     <MESSAGE value="Fixed Doc String for handle method" />
     <MESSAGE value="Update dependencies to the latest version." />
-    <option name="LAST_COMMIT_MESSAGE" value="Update dependencies to the latest version." />
+    <MESSAGE value="Dependency resolution multiple Python versions." />
+    <option name="LAST_COMMIT_MESSAGE" value="Dependency resolution multiple Python versions." />
   </component>
 </project>

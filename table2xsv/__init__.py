@@ -1,5 +1,3 @@
 __author__ = "Amogh Madan"
-__author_email__ = "amoghmadaan@gmail.com"
 __name__ = "Table2XSV"
 __version__ = "1.0.0"
-__url__ = "https://github.com/amoghmadan/Table2XSV"
