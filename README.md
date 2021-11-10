@@ -28,13 +28,18 @@ Note (Python): Replace X with Python Minor Version
 
 ## Requirements [Build]
 ```bash
-pip install toml tox pluggy
+pip install -r requirements.txt
 ```
 
 ## Requirements [Development]
 ```bash
-pip install toml tox pluggy
 pip install -r requirements.txt
+pip install -r requirements/generic/common.txt
+pip install -r requirements/generic/csv.txt
+pip install -r requirements/generic/excel.txt
+pip install -r requirements/generic/mysql.txt
+pip install -r requirements/generic/neo4j.txt
+pip install -r requirements/generic/sqlite.txt
 ```
 
 ## Generate [Build (Distribution and Wheel)]
