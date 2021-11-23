@@ -17,7 +17,7 @@ class TestTable2XSV(unittest.TestCase):
     def test_csv2df(self):
         """Test CSV"""
 
-        from table2xsv.management.commands.csv import Command
+        from table2xsv.contrib.root.management.commands.csv import Command
 
         kwargs = {"path": self.ASSETS_DIR / "input.csv"}
         command = Command()
@@ -27,7 +27,7 @@ class TestTable2XSV(unittest.TestCase):
     def test_excel2df(self):
         """Test Excel"""
 
-        from table2xsv.management.commands.excel import Command
+        from table2xsv.contrib.root.management import Command
 
         kwargs = {"path": self.ASSETS_DIR / "input.xlsx", "sheet": "Sheet1"}
         command = Command()
@@ -38,7 +38,7 @@ class TestTable2XSV(unittest.TestCase):
     def test_mysql2df(self):
         """Test MySQL"""
 
-        from table2xsv.management.commands.mysql import Command
+        from table2xsv.contrib.root.management.commands.mysql import Command
 
         kwargs = {"user": "root", "password": "root", "query": "SELECT 1 AS One;"}
         command = Command()
@@ -49,7 +49,7 @@ class TestTable2XSV(unittest.TestCase):
     def test_neo4j2df(self):
         """Test Neo4j"""
 
-        from table2xsv.management.commands.neo4j import Command
+        from table2xsv.contrib.root.management import Command
 
         kwargs = {"user": "neo4j", "password": "neo4j", "query": "MATCH 1 AS One;"}
         command = Command()
@@ -59,7 +59,7 @@ class TestTable2XSV(unittest.TestCase):
     def test_sqlite2df(self):
         """Test SQLite"""
 
-        from table2xsv.management.commands.sqlite import Command
+        from table2xsv.contrib.root.management.commands.sqlite import Command
 
         kwargs: dict = {
             "path": self.ASSETS_DIR / "input.sqlite3",
