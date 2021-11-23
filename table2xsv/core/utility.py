@@ -3,10 +3,11 @@ from collections import defaultdict
 from difflib import get_close_matches
 from pathlib import Path
 
-from table2xsv import __name__
-from table2xsv.core.base import BaseCommand, CommandParser, CommandError
-from table2xsv.core.management.helpers import get_commands, load_command_class
-from table2xsv.utils.getter import get_version
+from table2xsv.core.base import BaseCommand
+from table2xsv.core.exceptions import CommandError
+from table2xsv.core.parser import CommandParser
+from table2xsv.core.helpers import get_commands, load_command_class
+from table2xsv.utils.getter import get_name, get_named_version
 
 
 class ManagementUtility:
@@ -36,7 +37,7 @@ class ManagementUtility:
                 commands_dict[app].append(name)
             for app in sorted(commands_dict):
                 usage.append("")
-                usage.append("[%s]" % (__name__,))
+                usage.append("[%s]" % (get_name(),))
                 for name in sorted(commands_dict[app]):
                     usage.append("    %s" % name)
 
@@ -99,7 +100,7 @@ class ManagementUtility:
                     self.prog_name, options.args[0]
                 )
         elif subcommand == "version" or self.argv[1:] == ["--version"]:
-            sys.stdout.write(get_version() + "\n")
+            sys.stdout.write(get_named_version() + "\n")
         elif self.argv[1:] in (["--help"], ["-h"]):
             sys.stdout.write(self.main_help_text() + "\n")
         else:

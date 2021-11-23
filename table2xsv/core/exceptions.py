@@ -1,4 +1,10 @@
-class CommandError(Exception):
+class Error(Exception):
+    """Every custom error should inherit from this class."""
+
+    pass
+
+
+class CommandError(Error):
     """
     Exception class indicating a problem while executing a management
     command.
@@ -16,7 +22,7 @@ class CommandError(Exception):
         super().__init__(*args, **kwargs)
 
 
-class SystemCheckError(CommandError):
+class SystemCheckError(Error):
     """
     The system check framework detected unrecoverable errors.
     """

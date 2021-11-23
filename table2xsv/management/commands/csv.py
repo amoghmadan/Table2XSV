@@ -1,6 +1,6 @@
 from pandas import read_csv
 
-from table2xsv.extended.base import Table2XSVBaseCommand
+from table2xsv.management import Table2XSVBaseCommand
 
 
 class Command(Table2XSVBaseCommand):
