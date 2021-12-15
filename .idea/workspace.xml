@@ -1,32 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ad6b76c0-59b7-4bf4-9448-d2a6b18bda1a" name="Changes" comment="setup.cfg fixed for URL, Author and Author Email.">
-      <change afterPath="$PROJECT_DIR$/table2xsv/bin/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="ad6b76c0-59b7-4bf4-9448-d2a6b18bda1a" name="Changes" comment="Updated the patch version from 0 -&gt; 1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/setup.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/table2xsv/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/table2xsv/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/table2xsv/core/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/table2xsv/core/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/table2xsv/core/base.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/table2xsv/core/exceptions.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/table2xsv/core/formatter.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/table2xsv/core/management/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/table2xsv/core/management/helpers.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/table2xsv/core/management/utility.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/table2xsv/core/parser.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/table2xsv/core/wrapper.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/table2xsv/extended/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/table2xsv/extended/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/table2xsv/management/base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/table2xsv/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/table2xsv/management/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/table2xsv/management/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/table2xsv/management/commands/csv.py" beforeDir="false" afterPath="$PROJECT_DIR$/table2xsv/management/commands/csv.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/table2xsv/management/commands/excel.py" beforeDir="false" afterPath="$PROJECT_DIR$/table2xsv/management/commands/excel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/table2xsv/management/commands/mysql.py" beforeDir="false" afterPath="$PROJECT_DIR$/table2xsv/management/commands/mysql.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/table2xsv/management/commands/neo4j.py" beforeDir="false" afterPath="$PROJECT_DIR$/table2xsv/management/commands/neo4j.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/table2xsv/management/commands/sqlite.py" beforeDir="false" afterPath="$PROJECT_DIR$/table2xsv/management/commands/sqlite.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/table2xsv/utils/getter.py" beforeDir="false" afterPath="$PROJECT_DIR$/table2xsv/utils/getter.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/tests.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -79,18 +56,18 @@
       <recent name="C:\Users\amogh.madan\PycharmProjects\Table2XSV\table2xsv\management" />
     </key>
   </component>
-  <component name="RunManager" selected="tox.TOX (Build): Package">
+  <component name="RunManager" selected="tox.TOX (Checker): Black (Format)">
     <list>
       <item itemvalue="Python tests.Tests (Unit): Process to DF" />
-      <item itemvalue="tox.TOX (Build): Package" />
       <item itemvalue="tox.TOX (Build): Executable [All]" />
+      <item itemvalue="tox.TOX (Build): Package" />
       <item itemvalue="tox.TOX (Checker): Bandit" />
-      <item itemvalue="tox.TOX (Checker): PyCodeStyle" />
-      <item itemvalue="tox.TOX (Checker): Flake8" />
       <item itemvalue="tox.TOX (Checker): Black (Check)" />
       <item itemvalue="tox.TOX (Checker): Black (Format)" />
-      <item itemvalue="tox.TOX (Testing): PyTest" />
+      <item itemvalue="tox.TOX (Checker): Flake8" />
+      <item itemvalue="tox.TOX (Checker): PyCodeStyle" />
       <item itemvalue="tox.TOX (Testing): Coverage (PyTest)" />
+      <item itemvalue="tox.TOX (Testing): PyTest" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -207,7 +184,21 @@
       <option name="project" value="LOCAL" />
       <updated>1636523364318</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Refactored the entire project for better preview and extendability">
+      <created>1637652115473</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1637652115473</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Updated the patch version from 0 -&gt; 1">
+      <created>1637652182119</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1637652182119</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -237,6 +228,8 @@
     <MESSAGE value="Update dependencies to the latest version." />
     <MESSAGE value="Dependency resolution multiple Python versions." />
     <MESSAGE value="setup.cfg fixed for URL, Author and Author Email." />
-    <option name="LAST_COMMIT_MESSAGE" value="setup.cfg fixed for URL, Author and Author Email." />
+    <MESSAGE value="Refactored the entire project for better preview and extendability" />
+    <MESSAGE value="Updated the patch version from 0 -&gt; 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated the patch version from 0 -&gt; 1" />
   </component>
 </project>
