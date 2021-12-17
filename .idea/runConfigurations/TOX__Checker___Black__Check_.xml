@@ -13,7 +13,7 @@
     </arguments>
     <runOnlyEnvs>
       <array>
-        <option value="py{37,38,39}-black-check" />
+        <option value="py{37,38,39,310}-black-check" />
       </array>
     </runOnlyEnvs>
     <method v="2" />
