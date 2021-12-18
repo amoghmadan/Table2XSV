@@ -10,7 +10,19 @@ def get_package_path():
     return package_path
 
 
+def get_name():
+    """Get Name"""
+
+    return __name__
+
+
 def get_version():
     """Get Version"""
 
-    return __name__ + " " + __version__
+    return __version__
+
+
+def get_named_version():
+    """Get Named Version"""
+
+    return get_name() + " " + get_version()

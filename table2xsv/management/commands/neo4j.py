@@ -2,13 +2,13 @@ import sys
 from getpass import getpass
 
 try:
-    import neo4j
+    from neo4j import GraphDatabase
 except ModuleNotFoundError:
     msg = "Install optional dependency neo4j, pip install table2xsv[neo4j]"
     sys.exit(msg)
 from pandas import DataFrame
 
-from table2xsv.extended.base import Table2XSVBaseCommand
+from table2xsv.management import Table2XSVBaseCommand
 
 
 class Command(Table2XSVBaseCommand):
@@ -48,7 +48,7 @@ class Command(Table2XSVBaseCommand):
             options["password"] = getpass(prompt="Password: ", stream=None)
         uri = "bolt://%s:%d" % (options["host"], options["port"])
         auth = (options["user"], options["password"])
-        with neo4j.GraphDatabase.bolt_driver(uri, auth=auth) as driver:
+        with GraphDatabase.bolt_driver(uri, auth=auth) as driver:
             with driver.session() as session:
                 records = session.run(options["query"])
         return DataFrame([r.values() for r in records], columns=records.keys())

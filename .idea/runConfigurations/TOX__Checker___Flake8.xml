@@ -13,7 +13,7 @@
     </arguments>
     <runOnlyEnvs>
       <array>
-        <option value="py{37,38,39}-flake8" />
+        <option value="py{37,38,39,310}-flake8" />
       </array>
     </runOnlyEnvs>
     <method v="2" />

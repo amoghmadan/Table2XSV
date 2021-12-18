@@ -8,7 +8,7 @@ except ModuleNotFoundError:
     sys.exit(msg)
 from pandas import read_sql
 
-from table2xsv.extended.base import Table2XSVBaseCommand
+from table2xsv.management import Table2XSVBaseCommand
 
 
 class Command(Table2XSVBaseCommand):

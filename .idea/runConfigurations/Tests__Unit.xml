@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Tests (Unit): Process to DF" type="tests" factoryName="Unittests">
+  <configuration default="false" name="Tests: Unit" type="tests" factoryName="Unittests">
     <module name="Table2XSV" />
     <option name="INTERPRETER_OPTIONS" value="" />
     <option name="PARENT_ENVS" value="true" />
