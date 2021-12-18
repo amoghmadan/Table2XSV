@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ad6b76c0-59b7-4bf4-9448-d2a6b18bda1a" name="Changes" comment="Updated the patch version from 0 -&gt; 1">
+    <list default="true" id="ad6b76c0-59b7-4bf4-9448-d2a6b18bda1a" name="Changes" comment="Shows that project supports Python 3.10">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/table2xsv/management/commands/neo4j.py" beforeDir="false" afterPath="$PROJECT_DIR$/table2xsv/management/commands/neo4j.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/setup.cfg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +57,7 @@
   </component>
   <component name="RunManager" selected="tox.TOX (Checker): Black (Format)">
     <list>
-      <item itemvalue="Python tests.Tests (Unit): Process to DF" />
+      <item itemvalue="Python tests.Tests: Unit" />
       <item itemvalue="tox.TOX (Build): Executable [All]" />
       <item itemvalue="tox.TOX (Build): Package" />
       <item itemvalue="tox.TOX (Checker): Bandit" />
