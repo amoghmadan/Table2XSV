@@ -13,7 +13,7 @@
     </arguments>
     <runOnlyEnvs>
       <array>
-        <option value="py{37,38,39}-build" />
+        <option value="py{37,38,39,310}-build" />
       </array>
     </runOnlyEnvs>
     <method v="2" />

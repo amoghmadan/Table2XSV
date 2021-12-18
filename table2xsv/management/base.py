@@ -1,16 +1,14 @@
-from __future__ import annotations
-
 from datetime import datetime
 
-from table2xsv.core.base import BaseCommand
-from table2xsv.utils.getter import get_version
+from table2xsv.core import BaseCommand
+from table2xsv.utils.getter import get_named_version
 
 
 class Table2XSVBaseCommand(BaseCommand):
     """Optional Arguments Base Command"""
 
     index = False
-    version = get_version()
+    version = get_named_version()
 
     def add_command_arguments(self, parser):
         """Add Command Specific Arguments"""

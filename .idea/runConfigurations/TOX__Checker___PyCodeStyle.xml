@@ -13,7 +13,7 @@
     </arguments>
     <runOnlyEnvs>
       <array>
-        <option value="py{37,38,39}-pycodestyle" />
+        <option value="py{37,38,39,310}-pycodestyle" />
       </array>
     </runOnlyEnvs>
     <method v="2" />
