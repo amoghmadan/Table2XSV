@@ -14,7 +14,12 @@ class TestMySQLCommand(unittest.TestCase):
     def test_mysql_command(self):
         """Test MySQL"""
 
-        options = {"database": "master", "user": "root", "password": "toor", "query": "SELECT 1 AS One;"}
+        options = {
+            "database": "master",
+            "user": "root",
+            "password": "toor",
+            "query": "SELECT 1 AS One;",
+        }
         argv = [
             get_name(),
             "mysql",
