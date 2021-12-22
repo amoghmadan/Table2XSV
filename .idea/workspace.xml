@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ad6b76c0-59b7-4bf4-9448-d2a6b18bda1a" name="Changes" comment="Add Python 3.10 Classifier">
-      <change afterPath="$PROJECT_DIR$/tests/unit/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Tests__Unit.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Unit_Test__Command___CSV.xml" afterDir="false" />
+    <list default="true" id="ad6b76c0-59b7-4bf4-9448-d2a6b18bda1a" name="Changes" comment="Black fix">
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Unit_Test__Command___Base.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Unit_Test__Command___Base.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Unit_Test__Command___CSV.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Unit_Test__Command___CSV.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Unit_Test__Command___Excel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Unit_Test__Command___Excel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Unit_Test__Command___MySQL.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Unit_Test__Command___MySQL.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Unit_Test__Command___Neo4j.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Unit_Test__Command___Neo4j.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Unit_Test__Command___SQLite.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Unit_Test__Command___SQLite.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/setup.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/tests.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +48,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/tests/unit/test_csv_command.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -58,7 +60,7 @@
       <recent name="C:\Users\amogh.madan\PycharmProjects\Table2XSV\table2xsv\management" />
     </key>
   </component>
-  <component name="RunManager" selected="tox.TOX (Build): Package">
+  <component name="RunManager" selected="Python tests.Unit Test (Command): Base">
     <list>
       <item itemvalue="Python tests.Unit Test (Command): Base" />
       <item itemvalue="Python tests.Unit Test (Command): CSV" />
@@ -205,7 +207,28 @@
       <option name="project" value="LOCAL" />
       <updated>1637652182119</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Separated all the tests and made it a package">
+      <created>1640161848057</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1640161848057</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Removed tests from packaging">
+      <created>1640161870059</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1640161870059</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Black fix">
+      <created>1640163091816</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1640163091816</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -237,6 +260,9 @@
     <MESSAGE value="setup.cfg fixed for URL, Author and Author Email." />
     <MESSAGE value="Refactored the entire project for better preview and extendability" />
     <MESSAGE value="Updated the patch version from 0 -&gt; 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated the patch version from 0 -&gt; 1" />
+    <MESSAGE value="Separated all the tests and made it a package" />
+    <MESSAGE value="Removed tests from packaging" />
+    <MESSAGE value="Black fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Black fix" />
   </component>
 </project>
