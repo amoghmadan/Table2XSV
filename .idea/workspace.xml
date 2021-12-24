@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ad6b76c0-59b7-4bf4-9448-d2a6b18bda1a" name="Changes" comment="Shows that project supports Python 3.10">
+    <list default="true" id="ad6b76c0-59b7-4bf4-9448-d2a6b18bda1a" name="Changes" comment="Black fix">
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Unit_Test__Command___Base.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Unit_Test__Command___Base.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Unit_Test__Command___CSV.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Unit_Test__Command___CSV.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Unit_Test__Command___Excel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Unit_Test__Command___Excel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Unit_Test__Command___MySQL.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Unit_Test__Command___MySQL.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Unit_Test__Command___Neo4j.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Unit_Test__Command___Neo4j.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Unit_Test__Command___SQLite.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Unit_Test__Command___SQLite.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/setup.cfg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,7 +25,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="development" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -55,9 +60,14 @@
       <recent name="C:\Users\amogh.madan\PycharmProjects\Table2XSV\table2xsv\management" />
     </key>
   </component>
-  <component name="RunManager" selected="tox.TOX (Checker): Black (Format)">
+  <component name="RunManager" selected="Python tests.Unit Test (Command): Base">
     <list>
-      <item itemvalue="Python tests.Tests: Unit" />
+      <item itemvalue="Python tests.Unit Test (Command): Base" />
+      <item itemvalue="Python tests.Unit Test (Command): CSV" />
+      <item itemvalue="Python tests.Unit Test (Command): Excel" />
+      <item itemvalue="Python tests.Unit Test (Command): MySQL" />
+      <item itemvalue="Python tests.Unit Test (Command): Neo4j" />
+      <item itemvalue="Python tests.Unit Test (Command): SQLite" />
       <item itemvalue="tox.TOX (Build): Executable [All]" />
       <item itemvalue="tox.TOX (Build): Package" />
       <item itemvalue="tox.TOX (Checker): Bandit" />
@@ -197,7 +207,28 @@
       <option name="project" value="LOCAL" />
       <updated>1637652182119</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Separated all the tests and made it a package">
+      <created>1640161848057</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1640161848057</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Removed tests from packaging">
+      <created>1640161870059</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1640161870059</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Black fix">
+      <created>1640163091816</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1640163091816</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -229,6 +260,9 @@
     <MESSAGE value="setup.cfg fixed for URL, Author and Author Email." />
     <MESSAGE value="Refactored the entire project for better preview and extendability" />
     <MESSAGE value="Updated the patch version from 0 -&gt; 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated the patch version from 0 -&gt; 1" />
+    <MESSAGE value="Separated all the tests and made it a package" />
+    <MESSAGE value="Removed tests from packaging" />
+    <MESSAGE value="Black fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Black fix" />
   </component>
 </project>
