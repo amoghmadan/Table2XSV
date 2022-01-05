@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="TOX (Checker): Flake8" type="Tox" factoryName="Tox">
+  <configuration default="false" name="Unit Test (Command): MySQL" type="tests" factoryName="Unittests">
     <module name="Table2XSV" />
     <option name="INTERPRETER_OPTIONS" value="" />
     <option name="PARENT_ENVS" value="true" />
@@ -8,14 +8,10 @@
     <option name="IS_MODULE_SDK" value="false" />
     <option name="ADD_CONTENT_ROOTS" value="true" />
     <option name="ADD_SOURCE_ROOTS" value="true" />
-    <arguments>
-      <array />
-    </arguments>
-    <runOnlyEnvs>
-      <array>
-        <option value="py{37,38,39,310}-flake8" />
-      </array>
-    </runOnlyEnvs>
+    <option name="_new_pattern" value="&quot;&quot;" />
+    <option name="_new_additionalArguments" value="&quot;&quot;" />
+    <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/unit/test_mysql_command.py&quot;" />
+    <option name="_new_targetType" value="&quot;PATH&quot;" />
     <method v="2" />
   </configuration>
 </component>
