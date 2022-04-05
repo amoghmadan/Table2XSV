@@ -44,12 +44,17 @@ pip install -r requirements.txt
 ## Requirements [Development]
 ```bash
 pip install -r requirements.txt
+pip install -r requirements/build.txt
+pip install -r requirements/checker.txt
+pip install -r requirements/executable.txt
+pip install -r requirements/testing.txt
 pip install -r requirements/generic/common.txt
 pip install -r requirements/generic/csv.txt
 pip install -r requirements/generic/excel.txt
 pip install -r requirements/generic/mysql.txt
 pip install -r requirements/generic/neo4j.txt
 pip install -r requirements/generic/sqlite.txt
+pip install -e .
 ```
 
 ## Generate [Build (Distribution and Wheel)]
