@@ -2,7 +2,7 @@ from sqlite3 import connect
 
 from pandas import read_sql_query
 
-from table2xsv.management import Table2XSVBaseCommand
+from table2xsv.core import Table2XSVBaseCommand
 
 
 class Command(Table2XSVBaseCommand):

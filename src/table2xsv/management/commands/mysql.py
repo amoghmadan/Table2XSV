@@ -8,7 +8,7 @@ except ModuleNotFoundError:
     sys.exit(msg)
 from pandas import read_sql
 
-from table2xsv.management import Table2XSVBaseCommand
+from table2xsv.core import CommandError, Table2XSVBaseCommand
 
 
 class Command(Table2XSVBaseCommand):
@@ -49,6 +49,9 @@ class Command(Table2XSVBaseCommand):
         if not options["password"]:
             options["password"] = getpass(prompt="Password: ", stream=None)
         credentials = {key: options[key] for key in keys}
-        with MySQLdb.Connection(**credentials) as con:
-            df = read_sql(options["query"], con=con)
-        return df
+        try:
+            with MySQLdb.Connection(**credentials) as con:
+                df = read_sql(options["query"], con=con)
+            return df
+        except Exception as e:
+            raise CommandError(*e.args) from e

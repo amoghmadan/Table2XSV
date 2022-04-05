@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from table2xsv.core import BaseCommand
+from table2xsv.core.base import BaseCommand
 from table2xsv.utils.getter import get_named_version
 
 

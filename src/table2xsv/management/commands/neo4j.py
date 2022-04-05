@@ -8,13 +8,13 @@ except ModuleNotFoundError:
     sys.exit(msg)
 from pandas import DataFrame
 
-from table2xsv.management import Table2XSVBaseCommand
+from table2xsv.core import CommandError, Table2XSVBaseCommand
 
 
 class Command(Table2XSVBaseCommand):
     """Neo4j Command"""
 
-    help = "Read from Neo4j Tabular Query write to XSV"
+    help = "Read from Neo4j (Bolt) Tabular Query write to XSV"
 
     def add_command_arguments(self, parser):
         """Add Arguments for Neo4j Command"""
@@ -50,5 +50,8 @@ class Command(Table2XSVBaseCommand):
         auth = (options["user"], options["password"])
         with GraphDatabase.bolt_driver(uri, auth=auth) as driver:
             with driver.session() as session:
-                records = session.run(options["query"])
+                try:
+                    records = session.run(options["query"])
+                except Exception as e:
+                    raise CommandError(*e.args) from e
         return DataFrame([r.values() for r in records], columns=records.keys())
