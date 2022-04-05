@@ -10,7 +10,6 @@ class TestNeo4jCommand(unittest.TestCase):
 
     command = "neo4j"
 
-    @unittest.skip("Neo4j, Switch Test Credentials")
     def test_neo4j_command(self):
         """Test Neo4j"""
 
@@ -23,10 +22,12 @@ class TestNeo4jCommand(unittest.TestCase):
             get_name(),
             "neo4j",
             options["user"],
-            options["password"],
             options["query"],
+            "-p",
+            options["password"],
         ]
-        self.assertEqual(execute_from_command_line(argv), None)
+        with self.assertRaises(SystemExit):
+            execute_from_command_line(argv)
 
     def test_help_by_command_name(self):
         """Test Help By Command Name"""

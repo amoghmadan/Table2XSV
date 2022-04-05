@@ -4,7 +4,7 @@ import unittest
 from table2xsv.bin import execute_from_command_line
 from table2xsv.core.helpers import call_command
 from table2xsv.utils.getter import get_name
-from tests import ASSETS_DIR
+from paths import ASSETS_DIR
 
 
 class TestExcelCommand(unittest.TestCase):
