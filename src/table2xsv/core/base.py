@@ -151,7 +151,7 @@ class BaseCommand:
         try:
             self.execute(*args, **cmd_options)
         except CommandError as e:
-            if options.traceback:
+            if getattr(options, "traceback", None):
                 raise
 
             # SystemCheckError takes care of its own formatting.
