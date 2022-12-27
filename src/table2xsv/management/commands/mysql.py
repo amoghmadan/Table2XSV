@@ -1,11 +1,10 @@
-import sys
 from getpass import getpass
 
 try:
     import MySQLdb
 except ModuleNotFoundError:
     msg = "Install optional dependency mysql, pip install table2xsv[mysql]"
-    sys.exit(msg)
+    raise ModuleNotFoundError(msg)
 from pandas import read_sql
 
 from table2xsv.core import CommandError, Table2XSVBaseCommand
@@ -18,7 +17,6 @@ class Command(Table2XSVBaseCommand):
 
     def add_command_arguments(self, parser):
         """Add Arguments for MySQL Command"""
-
         parser.add_argument("user", type=str, help="MySQL user to connect")
         parser.add_argument("database", type=str, help="MySQL db to connect")
         parser.add_argument(
@@ -44,7 +42,6 @@ class Command(Table2XSVBaseCommand):
 
     def process_to_df(self, *args, **options):
         """MySQL Handling Logic"""
-
         keys = ("host", "port", "user", "password", "database")
         if not options["password"]:
             options["password"] = getpass(prompt="Password: ", stream=None)

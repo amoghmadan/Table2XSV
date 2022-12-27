@@ -1,11 +1,10 @@
-import sys
 from getpass import getpass
 
 try:
     from neo4j import GraphDatabase
 except ModuleNotFoundError:
     msg = "Install optional dependency neo4j, pip install table2xsv[neo4j]"
-    sys.exit(msg)
+    raise ModuleNotFoundError(msg)
 from pandas import DataFrame
 
 from table2xsv.core import CommandError, Table2XSVBaseCommand
@@ -18,7 +17,6 @@ class Command(Table2XSVBaseCommand):
 
     def add_command_arguments(self, parser):
         """Add Arguments for Neo4j Command"""
-
         parser.add_argument("user", type=str, help="Neo4j user to connect")
         parser.add_argument(
             "query", type=str, help="Provide query to return tabular data"
@@ -43,7 +41,6 @@ class Command(Table2XSVBaseCommand):
 
     def process_to_df(self, *args, **options):
         """Neo4j Handling Logic"""
-
         if not options["password"]:
             options["password"] = getpass(prompt="Password: ", stream=None)
         uri = "bolt://%s:%d" % (options["host"], options["port"])
