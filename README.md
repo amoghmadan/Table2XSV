@@ -27,8 +27,6 @@ Note (Python): Replace X with Python Minor Version
 
 Note (Fedora): Replace yum with dnf
 
-Caution: ```Not a tried and tested method but known to work. If mysql-devel thing does not work replace mysqlclient package with pymysql package in the requirements.txt, setup.cfg, tox.ini and the mysql.py file.```
-
 ## Windows
 Download, MS VS C++ Redistributable: [Microsoft Visual Studio C++ Redistributable]
 
@@ -38,23 +36,13 @@ Note (Python): Replace X with Python Minor Version
 
 ## Requirements [Build]
 ```bash
-pip install -r requirements.txt
+pip install tox==3.28.0
 ```
 
 ## Requirements [Development]
 ```bash
-pip install -r requirements.txt
-pip install -r requirements/build.txt
-pip install -r requirements/checker.txt
-pip install -r requirements/executable.txt
-pip install -r requirements/testing.txt
-pip install -r requirements/generic/common.txt
-pip install -r requirements/generic/csv.txt
-pip install -r requirements/generic/excel.txt
-pip install -r requirements/generic/mysql.txt
-pip install -r requirements/generic/neo4j.txt
-pip install -r requirements/generic/sqlite.txt
-pip install -e .
+pip install -e .[all]
+pip install -e .[development]
 ```
 
 ## Generate [Build (Distribution and Wheel)]
