@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="TOX (Checker): PyCodeStyle" type="Tox" factoryName="Tox">
+  <configuration default="false" name="TOX (Checker): MyPy" type="Tox" factoryName="Tox">
     <module name="Table2XSV" />
     <option name="INTERPRETER_OPTIONS" value="" />
     <option name="PARENT_ENVS" value="true" />
@@ -13,7 +13,7 @@
     </arguments>
     <runOnlyEnvs>
       <array>
-        <option value="py{38,39,310,311}-pycodestyle" />
+        <option value="py{38,39,310,311}-mypy" />
       </array>
     </runOnlyEnvs>
     <method v="2" />

@@ -3,9 +3,9 @@
     <module name="Table2XSV" />
     <option name="INTERPRETER_OPTIONS" value="" />
     <option name="PARENT_ENVS" value="true" />
-    <option name="SDK_HOME" value="E:\PycharmProjects\Table2XSV\venv\Scripts\python.exe" />
+    <option name="SDK_HOME" value="" />
     <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-    <option name="IS_MODULE_SDK" value="false" />
+    <option name="IS_MODULE_SDK" value="true" />
     <option name="ADD_CONTENT_ROOTS" value="true" />
     <option name="ADD_SOURCE_ROOTS" value="true" />
     <arguments>
@@ -13,7 +13,7 @@
     </arguments>
     <runOnlyEnvs>
       <array>
-        <option value="py{37,38,39,310}-black-format" />
+        <option value="py{38,39,310,311}-black-format" />
       </array>
     </runOnlyEnvs>
     <method v="2" />
