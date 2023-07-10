@@ -1,6 +1,0 @@
-defusedxml==0.7.1
-et-xmlfile==1.1.0
-odfpy==1.4.1
-openpyxl==3.0.9
-pyxlsb==1.0.9
-xlrd==2.0.1

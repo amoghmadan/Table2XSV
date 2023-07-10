@@ -1,8 +1,6 @@
-import sys
-
 from pandas import read_excel
 
-from table2xsv.management import Table2XSVBaseCommand
+from table2xsv.core import Table2XSVBaseCommand
 
 
 class Command(Table2XSVBaseCommand):
@@ -12,7 +10,6 @@ class Command(Table2XSVBaseCommand):
 
     def add_command_arguments(self, parser):
         """Add Arguments for Excel Command"""
-
         parser.add_argument("path", type=str, help="Path to the Excel file")
         parser.add_argument(
             "-S",
@@ -24,9 +21,8 @@ class Command(Table2XSVBaseCommand):
 
     def process_to_df(self, *args, **options):
         """Excel Handling Logic"""
-
         try:
             return read_excel(options["path"], sheet_name=options["sheet"])
         except ImportError:
             msg = "Install optional dependency excel, pip install table2xsv[excel]"
-            sys.exit(msg)
+            raise ModuleNotFoundError(msg)
