@@ -1,6 +1,57 @@
 [build-system]
-requires = ["setuptools>=40.8.0", "wheel>=0.36.2"]
+requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
+
+[project]
+name = "Table2XSV"
+dynamic = ["version"]
+authors = [{ name = "Amogh Madan", email = "amoghmadaan@gmail.com" }]
+license = { file = "LICENSE" }
+requires-python = ">=3.8,<3.13"
+description = "Convert Tabular Data to XSV"
+readme = "README.md"
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Intended Audience :: System Administrators",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Utilities",
+]
+dependencies = ["pandas"]
+
+[project.scripts]
+Table2XSV = "table2xsv.bin:execute_from_command_line"
+
+[project.optional-dependencies]
+all = ["xlrd", "openpyxl", "odfpy", "pyxlsb", "mysqlclient", "neo4j"]
+development = ["tox"]
+excel = ["xlrd", "openpyxl", "odfpy", "pyxlsb"]
+mysql = ["mysqlclient"]
+neo4j = ["neo4j"]
+
+[project.urls]
+Documentation = "https://github.com/amoghmadan/Table2XSV"
+GitHub = "https://github.com/amoghmadan/Table2XSV"
+
+
+[tool.setuptools.dynamic]
+version = { attr = "table2xsv.__version__" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+exclude = ["main.py"]
+
 
 [tool.isort]
 profile = "black"
@@ -12,3 +63,24 @@ force_grid_wrap = 0
 use_parentheses = true
 ensure_newline_before_comments = true
 line_length = 88
+
+
+[tool.bandit]
+exclude_dirs = [
+    "./.eggs",
+    "./.git",
+    "./.tox",
+    "./build",
+    "./coverage",
+    "./dist",
+    "./venv",
+    "./__pycache__",
+    "*tests*",
+]
+
+
+[tool.mypy]
+namespace_packages = true
+explicit_package_bases = true
+ignore_missing_imports = true
+exclude = """venv"""

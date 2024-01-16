@@ -10,7 +10,6 @@ class TestMySQLCommand(unittest.TestCase):
 
     command = "mysql"
 
-    @unittest.skip("MySQL, Switch Test Credentials")
     def test_mysql_command(self):
         """Test MySQL"""
 
@@ -24,10 +23,13 @@ class TestMySQLCommand(unittest.TestCase):
             get_name(),
             "mysql",
             options["user"],
-            options["password"],
+            options["database"],
             options["query"],
+            "-p",
+            options["password"],
         ]
-        self.assertEqual(execute_from_command_line(argv), None)
+        with self.assertRaises(SystemExit):
+            execute_from_command_line(argv)
 
     def test_help_by_command_name(self):
         """Test Help By Command Name"""

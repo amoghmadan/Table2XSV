@@ -1,7 +1,7 @@
 # Table2XSV
 Convert Tabular Data to XSV [CSV, TSV, PSV and Others]
 
-**Python 3.7 <= 3.X < 3.11**
+**Python 3.8 <= 3.X < 3.13**
 
 **Setup CSV and SQLite (Basic Installation)**
 ```bash
@@ -27,8 +27,6 @@ Note (Python): Replace X with Python Minor Version
 
 Note (Fedora): Replace yum with dnf
 
-Caution: ```Not a tried and tested method but known to work. If mysql-devel thing does not work replace mysqlclient package with pymysql package in the requirements.txt, setup.cfg, tox.ini and the mysql.py file.```
-
 ## Windows
 Download, MS VS C++ Redistributable: [Microsoft Visual Studio C++ Redistributable]
 
@@ -38,18 +36,13 @@ Note (Python): Replace X with Python Minor Version
 
 ## Requirements [Build]
 ```bash
-pip install -r requirements.txt
+pip install tox
 ```
 
 ## Requirements [Development]
 ```bash
-pip install -r requirements.txt
-pip install -r requirements/generic/common.txt
-pip install -r requirements/generic/csv.txt
-pip install -r requirements/generic/excel.txt
-pip install -r requirements/generic/mysql.txt
-pip install -r requirements/generic/neo4j.txt
-pip install -r requirements/generic/sqlite.txt
+pip install -e .[all]
+pip install -e .[development]
 ```
 
 ## Generate [Build (Distribution and Wheel)]
@@ -70,6 +63,8 @@ Note: Replace X with Python Minor Version
 ```bash
 tox -c . -e py3X-build-exe  # All Optionals Will Be Installed
 ```
+Caution: _Works a bit slower._ Remove the -F flag in tox.ini and use the build folder path to make it faster.
+
 Note (Python): Replace X with Python Minor Version
 
 ## Help
