@@ -5,11 +5,9 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "Table2XSV"
 dynamic = ["version"]
-authors = [
-    { name = "Amogh Madan", email = "amoghmadaan@gmail.com" },
-]
+authors = [{ name = "Amogh Madan", email = "amoghmadaan@gmail.com" }]
 license = { file = "LICENSE" }
-requires-python = ">=3.8,<3.12"
+requires-python = ">=3.8,<3.13"
 description = "Convert Tabular Data to XSV"
 readme = "README.md"
 classifiers = [
@@ -27,6 +25,7 @@ classifiers = [
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
     "Topic :: Utilities",
 ]
 dependencies = ["pandas"]
@@ -36,7 +35,7 @@ Table2XSV = "table2xsv.bin:execute_from_command_line"
 
 [project.optional-dependencies]
 all = ["xlrd", "openpyxl", "odfpy", "pyxlsb", "mysqlclient", "neo4j"]
-development = ["tox==3.28.0"]
+development = ["tox"]
 excel = ["xlrd", "openpyxl", "odfpy", "pyxlsb"]
 mysql = ["mysqlclient"]
 neo4j = ["neo4j"]
@@ -45,6 +44,9 @@ neo4j = ["neo4j"]
 Documentation = "https://github.com/amoghmadan/Table2XSV"
 GitHub = "https://github.com/amoghmadan/Table2XSV"
 
+
+[tool.setuptools.dynamic]
+version = { attr = "table2xsv.__version__" }
 
 [tool.setuptools.packages.find]
 where = ["src"]
