@@ -1,7 +1,7 @@
 # Table2XSV
 Convert Tabular Data to XSV [CSV, TSV, PSV and Others]
 
-**Python 3.7 <= 3.X < 3.11**
+**Python 3.8 <= 3.X < 3.13**
 
 **Setup CSV and SQLite (Basic Installation)**
 ```bash
@@ -36,7 +36,7 @@ Note (Python): Replace X with Python Minor Version
 
 ## Requirements [Build]
 ```bash
-pip install tox==3.28.0
+pip install tox
 ```
 
 ## Requirements [Development]
@@ -63,6 +63,8 @@ Note: Replace X with Python Minor Version
 ```bash
 tox -c . -e py3X-build-exe  # All Optionals Will Be Installed
 ```
+Caution: _Works a bit slower._ Remove the -F flag in tox.ini and use the build folder path to make it faster.
+
 Note (Python): Replace X with Python Minor Version
 
 ## Help
